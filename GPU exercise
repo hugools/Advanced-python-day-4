@@ -1,0 +1,10 @@
+I found the cupy to be faster already for the 128*128 array. See code below (putting # before alternatingly rows 1 and 2 and testing the code).
+
+import numpy as np
+#import cupy as np
+n = 128
+matrix128 = np.random.random(n*n).reshape(n,n)
+print(matrix128)
+print(np.shape(matrix128))
+
+%timeit np.fft.fft2(matrix128)
